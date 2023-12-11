@@ -181,6 +181,7 @@
   transition:all .3s ease-out;
 }
 
+
 @media screen and (min-width:1201px) {
   #header[data-menu = "on"] .h_submenu {
     opacity:1;
@@ -192,6 +193,7 @@
     visibility: visible;
   }
 }
+/* `ssh - 모바일 */
 @media screen and (max-width:1200px) {
   #header {
     position: fixed;
@@ -219,15 +221,24 @@
     background-size:auto 32px;
   }
 
+  /* `ssh - 햄버거 클릭전 기본상태*/
   #header .h_main {
     display: block;
     overflow-y: auto;
     z-index: 99999;
     position: fixed;
+    
+    /* 좌에서 우로 */
     top: 0;
     right: -100%;
+
+    /* 위에서 아래로 */
+    /* top: -100%;
+    right: 0; */
+
+    width: 50%;
+
     max-width:100%;
-    width:100%;
     height:100%;
     padding: 70px 20px;
     background-color: #fff;
@@ -359,8 +370,13 @@
     margin:0px 4px;
   }
 
+  /* `ssh - 햄버거 클릭시 */
   #header[data-header-mobile = "on"] .h_main {
+    /* 좌에서 우로 */
     right:0;
+
+    /* 위에서 아래로 */
+    /* top:0; */
   }
 
   #header .h_menu__link[aria-toggle="true"] + .h_submenu {
@@ -368,6 +384,13 @@
     margin-top:-5px;
     opacity: 1;
     visibility: visible;
+  }
+
+  body {
+    transition: .5s;
+  }
+  body[data-hamburger-effect = "on"] {
+    background-color: #0000007e;    
   }
 }
 @media screen and (max-width:992px) {
